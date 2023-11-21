@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="resetPassword()" class="formulario-registro">
+    <div >
+      <ion-label >Correo electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+    </div>
+    
+
+    <p class="ion-text-center">
+      <button class="boton-seleccion" type="submit" [disabled]="loading" *ngIf="!loading">
+        Recuperar contraseña <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+      </button>
+
+    </p>
+  </form>
+</ion-content>

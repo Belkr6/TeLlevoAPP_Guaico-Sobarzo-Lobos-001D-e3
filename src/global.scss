@@ -1,0 +1,490 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+$colorfondo: #4E6766;
+$colorheader: #1E152A;
+
+ion-content {
+  --background: #{$colorfondo}; /* Utiliza la interpolación de cadenas para aplicar la variable */
+}
+
+ion-toolbar{
+  --background: #{$colorheader};
+  background-color: #1E152A;
+  background: #1E152A;
+  --ion-toolbar-background:#1E152A;
+}
+
+
+.boton-seleccionpost {
+  position:absolute;
+    flex: 1; /* Hace que los botones ocupen un espacio igual dentro del contenedor */
+    margin-right: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+    background-color: rgba(30, 21, 42, 0.8);;
+    height: 2.5em;
+    width: 7.5em;
+    color: #F7DD72;
+    border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+    border-top-right-radius: 10px; /* Radio de borde superior derecho */
+    border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+    border-bottom-right-radius: 10px;
+    font-size: 2.2vw;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0.2em;
+    top: 30%;
+    text-shadow: 2px 5px 1px #1E152A;
+}
+
+
+
+
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -50;
+    
+    height: 18em;
+    margin-top: -20px;
+    margin-bottom: 20%;
+     /* Opcional: ajusta la altura según tus necesidades */
+}
+
+/* Estilo adicional para centrar horizontalmente */
+.center-content img {
+  max-width: 170%; /* La imagen no superará el 100% del ancho disponible */
+  max-height: 170%; /* La imagen no superará el 100% de la altura disponible */
+  width: auto;
+  height: auto;
+  filter: drop-shadow(5px 5px 2px #1E152A);
+}
+
+.center-content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -50;
+  
+  height: 18em;
+  margin-top: -20px;
+  margin-bottom: 20%;
+   /* Opcional: ajusta la altura según tus necesidades */
+}
+
+/* Estilo adicional para centrar horizontalmente */
+.center-content2 img {
+max-width: 100%; /* La imagen no superará el 100% del ancho disponible */
+max-height: 100%; /* La imagen no superará el 100% de la altura disponible */
+width: auto;
+height: auto;
+border: 15px #1E152A solid ;
+border-top-left-radius: 20px; /* Radio de borde superior izquierdo */
+border-top-right-radius: 20px; /* Radio de borde superior derecho */
+border-bottom-left-radius: 20px; /* Radio de borde inferior izquierdo */
+border-bottom-right-radius: 20px;
+margin-bottom: -55%;
+margin-top: -35%;
+padding: 0;
+}
+
+.row {
+  display: flex; /* Usar Flexbox */
+  align-items: center; /* Centrar verticalmente los elementos en la fila */
+}
+
+.userwelcome{
+  display: flex;
+  flex-direction: row; /* Organizar elementos en una columna */
+  /* Alinear el texto al centro */
+}
+
+.texto1{
+    font-size: 6vw;;
+    text-align: center;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    color: #F7DD72;
+    width: auto; /* Ancho del contenedor en unidades em */
+    height: 3em; /* Altura del contenedor en unidades em */
+}
+
+.texto2{
+  font-size: 3vw;;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  
+  width: auto; /* Ancho del contenedor en unidades em */
+  height: 3em; /* Altura del contenedor en unidades em */
+}
+.h1text{
+    font-size: 6vw;;
+    color: #F7DD72;
+    font-weight: 450;
+    letter-spacing: 5px;
+    text-shadow: 2px 5px 1px #1E152A;
+    margin-left: 12%;
+    margin-right: 10%;
+    
+    
+}
+
+.marquee {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: #fefefe;
+  color: #333;
+  border: 1px solid #4a4a4a;
+}
+
+@keyframes move {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100vw); }
+}
+
+.moving-image {
+  
+  position: absolute;
+  animation: move 5s linear infinite;
+}
+
+.marquee p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  transform:translateX(100%);
+  /* Apply animation to this element */  
+  animation: marquee 5s linear infinite;
+}
+
+/* Move it (define the animation) */
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+.h2text{
+    font-size: 6vw;;
+    color: #F7DD72;
+    font-weight: 450;
+    letter-spacing: 5px;
+    text-shadow: 2px 5px 1px #1E152A;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+
+/*  #1E152A azul oscuro
+    #4E6766 gris verdoso
+    #5AB1BB celeste
+    #A5C882 verd
+    #F7DD72 amarillo */
+
+google-map {
+  width: 500px;
+  height: 300px;
+}
+
+.espacio-vacio {
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px; /* Establece la altura del espacio vacío según tus necesidades */
+  }
+
+  .espacio-vacio2 {
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    margin-top: 5px; /* Establece la altura del espacio vacío según tus necesidades */
+  }
+.espacio-vacio img{
+    position: relative;
+    max-width: 140%; /* La imagen no superará el 100% del ancho disponible */
+    max-height: 140%; /* La imagen no superará el 100% de la altura disponible */
+    width: auto;
+    height: auto;
+    filter: drop-shadow(5px 5px 2px #1E152A);
+    z-index: 100;
+
+}
+
+
+.contenedorprof{
+  position: relative;
+  height: 50vw;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  top: 50%;
+  right: 25%;
+    
+    
+
+  ; /* Establece la altura del espacio vacío según tus necesidades */
+}
+
+.tllpp {
+  position: relative;
+  max-width: 50%; /* La imagen no superará el 100% del ancho disponible */
+  max-height: 50%; /* La imagen no superará el 100% de la altura disponible */
+  width: 22%;
+  height: 22%;
+  filter: drop-shadow(5px 5px 2px #1E152A);
+  z-index: 100;
+
+}
+
+.botonreglog {
+    display: flex; /* Activa el modelo de caja flexible */
+    justify-content: space-between; /* Distribuye el espacio disponible entre los botones */
+    width: 80%;
+    margin-left: 10%;
+    
+}
+
+.boton-seleccion {
+    flex: 1; /* Hace que los botones ocupen un espacio igual dentro del contenedor */
+    margin-right: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+    background-color: rgba(30, 21, 42, 0.8);;
+    height: 2.5em;
+    width: 7.5em;
+    color: #F7DD72;
+    border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+    border-top-right-radius: 10px; /* Radio de borde superior derecho */
+    border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+    border-bottom-right-radius: 10px;
+    font-size: 4vw;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1em;
+    text-shadow: 2px 5px 1px #1E152A;
+}
+
+.boton-seleccion2 {
+  flex: 1; /* Hace que los botones ocupen un espacio igual dentro del contenedor */
+  margin-right: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+  background-color: rgba(30, 21, 42, 0.8);;
+  height: 5.5em;
+  width: 11.2em;
+  color: #F7DD72;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+  border-top-right-radius: 10px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+  border-bottom-right-radius: 10px;
+  font-size: 4vw;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1em;
+  text-shadow: 2px 5px 1px #1E152A;
+}
+
+
+
+
+.formulario-registro {
+    position: absolute;
+    top: 30vw;
+    left: 0;
+    width: 100%; /* O ajusta según tus necesidades */
+    padding: 20px; /* Agrega espacio alrededor del formulario */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+    z-index: 1; /* Asegura que el formulario esté por encima de la imagen */
+    backdrop-filter: blur(5px);
+  }
+
+  .tabs-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre las pestañas */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 2vw;
+    color: #fff;
+}
+
+/* Estilos para cada pestaña */
+.tab {
+    flex: 1; /* Cada pestaña ocupa el mismo espacio disponible */
+    text-align: center;
+    padding: 2vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+/* Estilos para los iconos (utiliza tus propios iconos o URLs) */
+.tab i {
+    font-size: 24px;
+}
+
+.tab img {
+    width: 50%;
+    height: 50%;
+    filter: drop-shadow(5px 5px 2px #1E152A);
+}
+
+
+
+  .formulario-registro2 {
+    color: #F7DD72;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    text-shadow: 2px 5px 1px #1E152A;
+    width: 230%;
+    /* Agregar estilos generales para el formulario si es necesario */
+  }
+
+
+  
+  .form-group {
+    margin-bottom: 20px; /* Espacio entre grupos de campos */
+    
+  }
+  
+  ion-label {
+    display: block; /* Colocar las etiquetas en una nueva línea */
+  }
+  
+  ion-input {
+    width: 100%; /* Ancho completo del campo de entrada */
+    background-color: rgba(90, 177, 187, 0.4) ;
+    border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+    border-top-right-radius: 10px; /* Radio de borde superior derecho */
+    border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+    border-bottom-right-radius: 10px; /* Radio de borde inferior derecho */
+    border: 2px solid #F7DD72 !important;
+  }
+  
+ 
+
+  /*  #1E152A azul oscuro
+    #4E6766 gris verdoso
+    #5AB1BB celeste
+    #A5C882 verd
+    #F7DD72 amarillo */
+
+    .close-button {
+        /* Estilos para el botón de cierre (X) */
+        background: #1E152A;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 100%;
+        border: none;
+        cursor: pointer;
+        color: #F7DD72;
+        font-size: 4vw; /* Ajusta el tamaño de fuente según sea necesario */
+        }
+    .header2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+    .h3text {
+        /* Estilos para tu título h1 */
+        margin: 0; /* Elimina el margen predeterminado para alinear con el botón */
+        }
+
+        #loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Asegura que esté en la parte superior de la página */
+          }
+          
+          #loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+
+          
+          .radio-group {
+            display: flex;
+            align-items: center; /* Centrar verticalmente el contenido de cada grupo */
+            margin-bottom: 10px; /* Espacio entre los grupos de radio */
+          }
+          
+          .radio-group input[type="radio"] {
+            width: 24px; /* Cambiar el tamaño del círculo */
+            height: 24px;
+            margin-right: 10px; /* Espacio entre el círculo y la etiqueta */
+            border-radius: 50%; /* Hacer el círculo */
+            border: 2px solid #F7DD72; /* Estilo del borde */
+            background-color: transparent; /* Fondo transparente */
+            appearance: none; /* Eliminar el estilo predeterminado del radio button */
+          }
+          
+          .radio-group input[type="radio"]:checked {
+            background-color: #F7DD72; /* Relleno del círculo cuando está seleccionado */
+          }
+          .vertical-container {
+            display: flex;
+            flex-direction: column;
+          }      
+
+
+
+
+          .map{
+            width: 20rem;
+            height: auto;
+
+          }

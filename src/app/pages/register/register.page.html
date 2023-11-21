@@ -1,0 +1,108 @@
+<ion-content [fullscreen]="true">
+   <div class="loader-container" *ngIf="showLoader">
+      <div class="loader">
+
+      </div>
+   </div>
+   
+   <div class="espacio-vacio">
+      <img src="assets/TeLlevoAPP.png" />
+   </div>
+   <div class="texto1">
+      <h1 class="h1text">REGISTRATE!</h1>
+   </div>
+   <div class="center-content"> <!-- Contenedor de logo -->
+      <!-- logo -->
+      <img src="assets/logo.png" />
+   </div>
+   <div class="botonreglog">
+      <button (click)="mostrarSeccion('registro')" class="boton-seleccion">Registro</button>
+      <p class="h2text">O</p>
+      <button (click)="mostrarSeccion('inicioSesion')" class="boton-seleccion">Login</button>
+   </div>
+   <div *ngIf="mostrarRegistro" class="formulario-registro">
+      <form [formGroup]="usuario" (ngSubmit)="guardarDatos()">
+         <div class="header2">
+            <h1 class="h3text">REGISTRATE!</h1>
+            <button (click)="cerrarSeccion()" class="close-button">X</button>
+         </div>
+         <div class="form-group">
+            <ion-label>Nombre:</ion-label>
+            <ion-input formControlName="name"></ion-input>
+         </div>
+
+         <div *ngIf="usuario.controls?.['name']?.touched && usuario.controls?.['name']?.invalid">
+            <ion-text>Debes ingresar un nombre</ion-text>
+         </div>
+
+         <div class="form-group">
+            <ion-label>Nombre de usuario:</ion-label>
+            <ion-input formControlName="username"></ion-input>
+         </div>
+
+         <div *ngIf="usuario.controls?.['username']?.touched && usuario.controls?.['username']?.invalid">
+            <ion-text>Debes ingresar un nombre de usuario</ion-text>
+         </div>
+
+         <div class="form-group">
+            <ion-label>Email:</ion-label>
+            <ion-input formControlName="email"></ion-input>
+         </div>
+
+         <div *ngIf="usuario.controls?.['email']?.touched && usuario.controls?.['email']?.invalid">
+            <ion-text>Debes usar un email valido</ion-text>
+         </div>
+           
+
+         <div class="form-group">
+            <ion-label>Contraseña:</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+         </div>
+         <div *ngIf="usuario.controls?.['password']?.touched && usuario.controls?.['password']?.invalid">
+            <ion-text>Debes usar una contraseña valida</ion-text>
+         </div>
+         <div class="form-group">
+            <ion-label>Confirma la Contraseña:</ion-label>
+            <ion-input type="password" formControlName="confirmPassword"></ion-input>
+         </div>
+         <div *ngIf="usuario.controls?.['confirmPassword']?.touched && usuario.controls?.['confirmPassword']?.invalid">
+            <ion-text>Las contraseñas no coinciden</ion-text>
+         </div>
+         
+
+         <p class="ion-text-center">
+            <button type="button" class="boton-seleccion" (click)="register()">Crear Cuenta</button>
+         </p>
+
+
+      </form>
+
+         </div>
+         <div *ngIf="mostrarInicioSesion">
+
+            <app-login (cerrarSeccion)="cerrarSeccion()"></app-login>
+            
+         </div>
+   
+   
+   <div class="tabs-container">
+      <div class="tab">
+         <i class="fa fa-home"></i> <!-- Aquí puedes usar tus propios iconos o URLs -->
+         <img src="assets/facebook.png" alt="Facebook">
+      </div>
+      <div class="tab">
+         <i class="fa fa-search"></i>
+         <img src="assets/reddit.png" alt="Reddit">
+      </div>
+      <div class="tab">
+         <i class="fa fa-envelope"></i>
+         <img src="assets/buscar.png" alt="Buscar">
+      </div>
+      <div class="tab">
+         <i class="fa fa-user"></i>
+         <img src="assets/gorjeo.png" alt="Gorjeo">
+      </div>
+   </div>
+
+
+</ion-content>

@@ -1,0 +1,20 @@
+
+<div class="formulario-registro">
+  <ion-back-button defaultHref="/homepage"></ion-back-button>
+  <form [formGroup]="postForm" (ngSubmit)="createPost()">
+    <div class="form-group">
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input formControlName="destination" type="text"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-label position="floating">Patente</ion-label>
+      <ion-input formControlName="patente" type="text"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-label position="floating">Capacidad del vehículo</ion-label>
+      <ion-input formControlName="capacidad" type="number"></ion-input>
+    </div> 
+    <!-- Agrega otros campos según sea necesario -->
+    <ion-button expand="full" type="submit" [disabled]="!postForm.valid">Crear publicación</ion-button>
+  </form>
+</div>

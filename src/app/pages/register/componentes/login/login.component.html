@@ -1,0 +1,27 @@
+
+<div>
+    <div class="botonreglog">
+        <div class="formulario-registro">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="header2">
+                    <h1 class="h3text">LOGEATE!</h1>
+                    <button (click)="cerrar()" class="close-button">X</button>
+                </div>
+                <div class="form-group">
+                    <ion-label for="email">Email</ion-label>
+                    <ion-input type="email" id="email" formControlName="email" />
+                </div>
+                <div class="form-group">
+                    <ion-label for="password">Contraseña</ion-label>
+                    <ion-input type="password" id="password" formControlName="password" />
+                </div>
+                <div>
+                    <a [routerLink]="['/recoverpass']"> ¿Olvidaste tu contraseña?</a>
+                </div>
+                <p class="ion-text-center">
+                    <button type="button" class="boton-seleccion" (click)="loginF()">Logeate</button>
+                 </p>
+            </form>
+        </div>
+    </div>
+</div>

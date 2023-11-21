@@ -1,0 +1,20 @@
+<!-- programar-viaje.component.html -->
+<div class="formulario-registro2">
+  <h2 class="texto2">Programar Viaje</h2>
+  <form (submit)="mostrarAlerta()">
+    <div class="form-group"> 
+      <label for="destino">Destino:</label>
+      <ion-input type="text" id="destino" name="destino" [(ngModel)]="destino" required></ion-input>
+    </div>
+    <div class="form-group"> 
+      <label for="horaSalida">Hora de Salida:</label>
+      <ion-input type="text" id="horaSalida" name="horaSalida" [(ngModel)]="horaSalida" required></ion-input>
+    </div>
+    <div class="form-group"> 
+      <label for="costoPorPersona">Costo por Persona:</label>
+      <ion-input type="number" id="costoPorPersona" name="costoPorPersona" [(ngModel)]="costoPorPersona" required></ion-input>
+    </div>
+    <button class="boton-seleccion" style="margin-top: -15%;" (click)="mostrarAlerta();">Programar Viaje</button>
+
+  </form>
+</div>

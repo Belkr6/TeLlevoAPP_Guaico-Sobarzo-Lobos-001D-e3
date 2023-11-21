@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="color:#F7DD72;">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div class="vertical-container">
+        <ion-button expand="full" color="light" routerLink="/inicio">Inicio</ion-button>
+        <ion-button expand="full" color="light" (click)="irARegistro()">Registro</ion-button>
+        <ion-button expand="full" color="light" routerLink="/profile">Perfil</ion-button>
+        <ion-button expand="full" color="light" (click)="signOut()">Cerrar Sesión</ion-button>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar class="headercolor">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div class="header-content" style="display: flex; align-items: center;">
+          <img class="tllpp" src="assets/TeLlevoAPP.png" />
+          <div class="userwelcome">
+            <ion-title text="right" class="texto2">
+              <p style="color:#F7DD72;">Bienvenido! {{profile?.name}}</p>
+            </ion-title>
+            <div *ngIf="role === 'Conductor'">
+              <ion-button (click)="openCreatePostModal()">Publicar Viaje</ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding" scrollEvents="true">
+      <button (click)="openUsersModal()">Ver usuarios que tomaron el viaje</button>
+      <div *ngFor="let post of posts">
+        <div class="postcss">
+          <h2>Destino: {{ post.destination }}</h2>
+          <p>Patente: {{ post.patente }}</p>
+          <p>Nombre: {{ profile?.name }}</p>
+          <p>Capacidad: {{ post?.capacidad }}</p>
+          <img [src]="post.mapImageUrl" alt="Map">
+          <ion-button *ngIf="role === 'Estudiante'" (click)="takeTrip(post)">Tomar viaje</ion-button>
+        </div>
+      </div>
+
+      
+    </ion-content>
+  </div>
+</ion-content>

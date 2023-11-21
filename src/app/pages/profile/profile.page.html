@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToActionSheet()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  
+    <ion-title>Perfil</ion-title>
+  
+    <ion-buttons slot="end">
+      <ion-button (click)="goToActionSheet()">Inicio</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content>
+
+  <ion-content>
+    <input type="file" (change)="subirImagen($event)" />
+    
+    
+
+    <!-- Foto de perfil en la parte superior -->
+    <ion-avatar class="ion-margin">
+      <img *ngIf="profileImageUrl" [src]="profileImageUrl" alt="Profile Image">
+    </ion-avatar>
+  
+    <!-- Información en un grid de 2x2 hacia abajo -->
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size="6">
+          <ion-card *ngIf="profile">
+            <ion-card-header>
+              <ion-card-title>{{ profile.name }}</ion-card-title>
+            </ion-card-header>
+  
+            <ion-card-content>
+              <p>Email: {{ profile.email }}</p>
+              <p>Usuario: {{ profile.username }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6">
+          <ion-card *ngIf="profile">
+            <ion-card-header>
+              <ion-card-title>Rol: {{ profile.role }}</ion-card-title>
+            </ion-card-header>
+  
+            <ion-card-content>
+              <p>Bio: {{ profile.bio }}</p>
+              <p *ngIf="!editing">{{ profile.bio }}</p>
+              <ion-textarea rows="5" *ngIf="editing" [(ngModel)]="bio"></ion-textarea>
+              <ion-button *ngIf="!editing" (click)="startEditing()">Edit Bio</ion-button>
+              <ion-button *ngIf="editing" (click)="saveBio()">Save Bio</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- Input para seleccionar una nueva imagen -->
+  
+  
+  </ion-content>
+  
